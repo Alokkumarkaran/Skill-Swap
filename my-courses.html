@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .nav-link.active {
+            font-weight: bold;
+            color: #ffffff !important;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <header class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <!-- Header content -->
+    </header>
+    <nav class="nav nav-pills nav-justified border-bottom">
+        <a class="nav-link " href="educator.html" id="homeNav">Home</a>
+        <a class="nav-link active" href="my-courses.html" id="learningNav">My Courses</a>
+        <a class="nav-link" href="addcourse.html" id="degreesNav">Add Course</a>
+        <a class="nav-link" href="#" id="careerNav">Check Homework</a>
+    </nav>
+    <main class="container my-4">
+        <h2 class="mb-4">My Courses</h2>
+        <div id="coursesContainer" class="row">
+            <!-- Courses will be populated here -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const coursesContainer = document.getElementById('coursesContainer');
+
+            // Get courses from localStorage
+            const courses = JSON.parse(localStorage.getItem('courses')) || [];
+
+            // Populate the coursesContainer with course cards
+            courses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'col-md-4 mb-4';
+                courseCard.innerHTML = `
+                    <div class="card">
+                        <img src="${course.image}" class="card-img-top" alt="${course.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${course.title}</h5>
+                            <p class="card-text">${course.description}</p>
+                            <p class="card-text"><small class="text-muted">Category: ${course.category}</small></p>
+                            <p class="card-text"><small class="text-muted">Level: ${course.level}</small></p>
+                            <p class="card-text"><strong>$${course.price}</strong></p>
+                        </div>
+                    </div>
+                `;
+
+                // Append the new course card to the container
+                coursesContainer.appendChild(courseCard);
+            });
+        });
+    </script>
+</body>
+</html>

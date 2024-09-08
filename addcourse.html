@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recently Viewed Products</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .nav-link.active {
+            font-weight: bold;
+            color: #ffffff !important;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <header class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <div class="flex items-center">
+            <i class="fas fa-bars fa-2x mr-3"></i>
+            <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Hh5RPsKhtBPsWCFSiEKnUJ6x/user-8qgiVpCV0U0b7zDjfFInHgjl/img-Zv704oRhkNq2NKJtt4HeMvka.png?st=2024-09-07T18%3A31%3A02Z&se=2024-09-07T20%3A31%3A02Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-06T22%3A24%3A12Z&ske=2024-09-07T22%3A24%3A12Z&sks=b&skv=2024-08-04&sig=5s%2Bvl6w%2BAas7kmhQnOa0%2BfH2Ir7W%2BlP3atYnu1Xq0/M%3D" alt="Coursera logo" height="40" class="mr-3">
+            <div x-data="{ open: false }" class="relative">
+                <button @click="open = !open" class="text-blue-500 hover:text-blue-600 focus:outline-none">
+                    Explore
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+            <input type="text" class="form-control rounded-pill mr-2" placeholder="What do you want to learn?" style="width: 300px;">
+            <i class="fas fa-search text-primary fa-lg"></i>
+        </div>
+        <div class="d-flex align-items-center">
+            <div x-data="{ open: false }" class="relative mr-3">
+                <button @click="open = !open" class="text-blue-500 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-globe"></i> English
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">English</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Hindi</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Spanish</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">French</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">German</a>
+                </div>
+            </div>
+            <i class="fas fa-bell fa-lg mr-3"></i>
+            <div x-data="{ open: false }" class="relative">
+                <button @click="open = !open" class="text-blue-500 hover:text-blue-600 focus:outline-none">
+                    <div class="rounded-full bg-blue-500 text-white flex items-center justify-center" style="width: 32px; height: 32px;">A</div>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Settings</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav nav-pills nav-justified border-bottom">
+        <a class="nav-link " href="educator.html" id="homeNav">Home</a>
+        <a class="nav-link" href="#" id="learningNav">My Courses</a>
+        <a class="nav-link active" href="addcourse.html" id="degreesNav">Add Course</a>
+        <a class="nav-link" href="#" id="careerNav">Check Homework</a>
+    </nav>
+    <main class="container my-4">
+        <h2 class="mb-4">Add New Course</h2>
+        <form id="courseForm">
+            <div class="form-group">
+                <label for="courseTitle">Course Title</label>
+                <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title" required>
+            </div>
+            <div class="form-group">
+                <label for="courseDescription">Course Description</label>
+                <textarea class="form-control" id="courseDescription" rows="3" placeholder="Enter course description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="courseImage">Course Image</label>
+                <input type="file" class="form-control-file" id="courseImage" required>
+            </div>
+            <div class="form-group">
+                <label for="courseCategory">Course Category</label>
+                <select class="form-control" id="courseCategory" required>
+                    <option>Data Science</option>
+                    <option>Business</option>
+                    <option>Computer Science</option>
+                    <option>Personal Development</option>
+                    <option>Health</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="courseLevel">Course Level</label>
+                <select class="form-control" id="courseLevel" required>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="coursePrice">Course Price</label>
+                <input type="number" class="form-control" id="coursePrice" placeholder="Enter course price" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Course</button>
+        </form>
+
+        <h2 class="mt-5 mb-4">My Courses</h2>
+        <div id="coursesContainer" class="row">
+            <!-- Course cards will be added here dynamically -->
+        </div>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('courseForm');
+            const coursesContainer = document.getElementById('coursesContainer');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form data
+                const title = document.getElementById('courseTitle').value;
+                const description = document.getElementById('courseDescription').value;
+                const image = document.getElementById('courseImage').files[0];
+                const category = document.getElementById('courseCategory').value;
+                const level = document.getElementById('courseLevel').value;
+                const price = document.getElementById('coursePrice').value;
+
+                // Create a new course card element
+                const courseCard = document.createElement('div');
+                courseCard.className = 'col-md-4 mb-4';
+                courseCard.innerHTML = `
+                    <div class="card">
+                        <img src="${URL.createObjectURL(image)}" class="card-img-top" alt="${title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text">${description}</p>
+                            <p class="card-text"><small class="text-muted">Category: ${category}</small></p>
+                            <p class="card-text"><small class="text-muted">Level: ${level}</small></p>
+                            <p class="card-text"><strong>$${price}</strong></p>
+                        </div>
+                    </div>
+                `;
+
+                // Append the new course card to the container
+                coursesContainer.appendChild(courseCard);
+
+                // Reset form fields
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
