@@ -1,0 +1,89 @@
+.main-content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  padding: 30px;
+  gap: 30px; /* Increased space between elements for better spacing */
+  background-color: #f4f4f9; /* Light background for the content area */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: 50px auto;
+
+  /* Responsive tweaks for smaller screens */
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* Stats Container */
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Space between boxes */
+    margin-top: 20px;
+  }
+
+  /* Box Styling */
+  .box {
+    background-color: #8a4baf;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    min-width: 180px;
+    max-width: 250px;
+    box-shadow: 0px 4px 8px rgba(173, 29, 205, 0.1);
+
+    /* Hover effect */
+    &:hover {
+      background-color: #432456;
+      transform: translateY(-5px); /* Subtle hover animation */
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Mobile-first responsive adjustments */
+    @media (max-width: 480px) {
+      min-width: 130px;
+      max-width: 180px;
+    }
+  }
+
+  /* Add Course Button */
+  .add-course-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    width: 200px; /* Consistent button width */
+    display: inline-block;
+
+    /* Hover effect */
+    &:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px); /* Subtle lift effect */
+    }
+
+    /* Responsive button size */
+    @media (max-width: 480px) {
+      font-size: 16px;
+      width: 160px; /* Slightly smaller button on small screens */
+    }
+  }
+
+  /* Heading Styling */
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

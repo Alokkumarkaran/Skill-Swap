@@ -1,0 +1,121 @@
+/* Background and overall layout */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('background.jpg') no-repeat center center/cover;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Auth form styling with fade-in animation */
+.auth-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Form title styling */
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #1503a2;
+}
+
+/* Form content layout */
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group for spacing */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels for inputs */
+.form-label {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Input fields with animations */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Input field focus effects */
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Change background color of the auth-page on input focus */
+.form-input:focus ~ .auth-page {
+  background-color: rgba(255, 255, 255, 0.5); /* Example background change */
+}
+
+/* Shift the form when an input is focused */
+.form-input:focus ~ .auth-form {
+  transform: translateY(-5px); /* Shift the form up slightly */
+}
+
+/* Submit button styling with hover effects */
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+.submit-btn:hover {
+  background-color: #259122;
+  transform: scale(1.05);
+}
+
+/* Disabled button state */
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Add hover effect for the auth form */
+.auth-form:hover {
+  box-shadow: 0 20px 50px rgba(24, 3, 184, 0.915); /* Increase shadow on hover */
+  transform: scale(1.09); /* Slightly scale up the form */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Optional: Change the background color on hover */
+.auth-form:hover {
+  background-color: rgba(255, 255, 255, 0.915); /* Fully opaque on hover */
+}

@@ -1,0 +1,49 @@
+.courses {
+  padding: 20px;
+  text-align: center; /* Center the title */
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; /* Dark color for title */
+}
+
+.course-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  justify-content: center; /* Center align the cards */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+}
+
+.no-courses {
+  font-size: 1.5em;
+  color: #999; /* Lighter color for empty state */
+  margin: 20px 0; /* Add some margin */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5em; /* Smaller title on mobile */
+  }
+
+  .course-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    align-items: center; /* Center cards */
+  }
+}
+
+.courses-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+  color: #fff; /* White text for contrast */
+  background-color: #1d3557; /* Deep blue background */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  padding: 15px 20px; /* Padding for some spacing inside the background */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  display: inline-block; /* Ensures background color wraps tightly around the text */
+}

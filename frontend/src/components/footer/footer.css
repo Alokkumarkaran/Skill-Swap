@@ -1,0 +1,87 @@
+footer {
+  background-color: #4b3e5d; /* Rich background color */
+  color: white; /* Text color */
+  padding: 40px 20px; /* Generous padding for a spacious look */
+  text-align: center; /* Center text */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the footer content */
+  display: flex; /* Flex layout for responsive design */
+  justify-content: space-between; /* Space between segments */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-segment {
+  flex: 1; /* Allow segments to grow equally */
+  min-width: 250px; /* Minimum width for segments */
+  margin: 20px; /* Margin for spacing */
+}
+
+.footer-segment h4 {
+  font-size: 18px; /* Increased heading size */
+  margin-bottom: 15px; /* Space below title */
+  text-transform: uppercase; /* Make headings stand out */
+}
+
+.footer-segment p {
+  font-size: 14px; /* Font size for paragraph */
+}
+
+.footer-segment ul {
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+}
+
+.footer-segment ul li {
+  margin: 10px 0; /* Space between items */
+}
+
+.footer-segment ul li a {
+  color: #f0e68c; /* Distinctive link color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-segment ul li a:hover {
+  color: #fff; /* Hover effect */
+}
+
+.social-links {
+  display: flex; /* Flex layout for social links */
+  justify-content: center; /* Center icons */
+  margin-top: 10px; /* Space above icons */
+}
+
+.social-links a {
+  color: #f0e68c; /* Icon color */
+  font-size: 24px; /* Larger icons */
+  margin: 0 15px; /* Space between icons */
+  transition: color 0.3s ease; /* Transition for hover */
+}
+
+.social-links a:hover {
+  color: #fff; /* Hover color for icons */
+}
+
+.footer-bottom {
+  margin-top: 20px; /* Space above bottom text */
+  font-size: 12px; /* Smaller text size */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack segments on small screens */
+    align-items: center; /* Center align items */
+  }
+
+  .footer-segment {
+    margin: 15px 0; /* Adjust margins for stacked layout */
+  }
+
+  .social-links a {
+    font-size: 20px; /* Smaller icon size on mobile */
+    margin: 0 8px; /* Adjust space between icons */
+  }
+}

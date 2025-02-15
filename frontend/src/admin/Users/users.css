@@ -1,0 +1,118 @@
+.users {
+  padding: 20px;
+  text-align: center; /* Center the title */
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; /* Dark color for title */
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove double borders */
+  margin: 0 auto; /* Center the table */
+}
+
+.user-table th, .user-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* Light border for table cells */
+  text-align: left; /* Align text to the left */
+}
+
+.user-table th {
+  background-color: #f4f4f4; /* Light background for headers */
+  color: #333; /* Dark color for header text */
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.common-btn {
+  padding: 10px 15px;
+  background-color: #c45af6; /* Primary button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.common-btn:hover {
+  background-color: #af14f1; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .user-table {
+    display: block; /* Make the table responsive */
+    overflow-x: auto; /* Allow horizontal scrolling */
+  }
+
+  .user-table th, .user-table td {
+    display: block; /* Stack cells vertically */
+    text-align: right; /* Align text to the right for mobile */
+  }
+
+  .user-table th {
+    text-align: left; /* Keep header text left-aligned */
+    position: relative; /* Position relative for the pseudo-element */
+  }
+
+  .user-table tr {
+    margin-bottom: 15px; /* Add spacing between rows */
+    border: 1px solid #ddd; /* Add border around each row */
+    border-radius: 5px; /* Round corners */
+    overflow: hidden; /* Prevent overflow */
+  }
+
+  .user-table td {
+    text-align: left; /* Left align for user data */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px; /* Set a max width for the input */
+  padding: 10px;
+  margin-bottom: 20px; /* Space between the input and the table */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Increase font size for readability */
+}
+
+.search-input::placeholder {
+  color: #999; /* Placeholder color */
+}
+.search-container {
+  display: flex; /* Align input and button in a row */
+  justify-content: center; /* Center the container */
+  margin-bottom: 20px; /* Space between search and table */
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px; /* Set a max width for the input */
+  padding: 10px 15px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Increase font size for readability */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.search-btn {
+  padding: 10px 15px;
+  background-color: #c670f1; /* Primary button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #b921f5; /* Darker shade on hover */
+}
